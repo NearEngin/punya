@@ -12,7 +12,7 @@ function showSurprise() {
             clearInterval(fade);
         }
     }, 200);
-    document.querySelector(".music-bars").classList.add("show");
+    document.querySelector(".punya-bars").classList.add("show");
 }
 
 
