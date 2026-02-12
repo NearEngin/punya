@@ -1,6 +1,19 @@
 function showSurprise() {
     document.getElementById("surprise").classList.add("show");
+
+    const song = document.getElementById("loveSong");
+    song.volume = 0;
+    song.play();
+
+    let fade = setInterval(() => {
+        if (song.volume < 1) {
+            song.volume += 0.05;
+        } else {
+            clearInterval(fade);
+        }
+    }, 200);
 }
+
 
 
 /* Floating Hearts Generator */
