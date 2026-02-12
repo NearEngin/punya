@@ -12,6 +12,7 @@ function showSurprise() {
             clearInterval(fade);
         }
     }, 200);
+    document.querySelector(".music-bars").classList.add("show");
 }
 
 
