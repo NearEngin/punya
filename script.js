@@ -2,6 +2,7 @@ function showSurprise() {
     document.getElementById("surprise").classList.add("show");
 }
 
+
 /* Floating Hearts Generator */
 function createHeart() {
     const heart = document.createElement("div");

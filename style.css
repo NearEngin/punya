@@ -9,20 +9,11 @@ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     color: white;
-
-    /* Background Image */
-    background: 
-        linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.403)),
-        url("us.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
+    background: linear-gradient(to bottom right, #4b000c, #ff006a);
     overflow-y: auto;
     overflow-x: hidden;
 }
+
 
 
 /* Main Container */
@@ -75,17 +66,46 @@ button:hover {
 }
 
 /* Surprise Section */
+/* Surprise Container */
 .surprise {
     margin-top: 30px;
     opacity: 0;
-    transform: translateY(20px);
+    transform: scale(0.8);
     transition: 0.6s ease;
 }
 
 .surprise.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
 }
+
+/* Popup Box */
+.popup {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* Image Styling */
+.love-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 100, 0.7);
+}
+
+/* Text Styling */
+.popup h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.popup p {
+    font-size: 1rem;
+}
+
 
 /* Glow Animation */
 @keyframes glow {
