@@ -1,41 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #fffb00, #b70000);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #ff7575, #ff7eb3);
     font-family: 'Arial', sans-serif;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: white;
     overflow: hidden;
 }
 
+/* Main Container */
 .container {
-    margin-top: 10%;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
 }
 
+/* Responsive Text */
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-bottom: 10px;
     animation: glow 2s infinite alternate;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
 .message {
-    width: 60%;
-    margin: 20px auto;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
 }
 
+/* Button */
 button {
-    padding: 12px 25px;
+    padding: 12px 20px;
     font-size: 1rem;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     background: white;
     color: #ff4e88;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+}
+
+button:active {
+    transform: scale(0.95);
 }
 
 button:hover {
@@ -43,36 +64,47 @@ button:hover {
     color: white;
 }
 
-.hidden {
-    display: none;
-}
-
-#surprise {
+/* Surprise Section */
+.surprise {
     margin-top: 20px;
-    animation: fadeIn 1.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
 }
 
+.surprise.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Glow Animation */
 @keyframes glow {
     from { text-shadow: 0 0 10px white; }
     to { text-shadow: 0 0 20px #ff004c, 0 0 30px #ff004c; }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 /* Floating Hearts */
-.hearts::before,
-.hearts::after {
-    content: "💖 💕 ❤️ 💗 💘 💓";
+.heart {
     position: absolute;
-    width: 100%;
-    font-size: 2rem;
-    animation: float 10s linear infinite;
+    bottom: -50px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
 }
 
-@keyframes float {
-    0% { top: 100%; }
-    100% { top: -10%; }
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* Make text larger on bigger screens */
+@media (min-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    .message { font-size: 1.1rem; }
 }
