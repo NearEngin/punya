@@ -6,21 +6,19 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to bottom right, #ff7575, #ff7eb3);
+    background: linear-gradient(to bottom right, #52000e, #ff006a);
     font-family: 'Arial', sans-serif;
     text-align: center;
     color: white;
-    overflow: hidden;
+    overflow-x: hidden;   /* only prevent sideways scroll */
 }
 
 /* Main Container */
 .container {
-    padding: 20px;
+    padding: 40px 20px;
     width: 90%;
     max-width: 500px;
+    margin: 0 auto;
 }
 
 /* Responsive Text */
@@ -37,7 +35,7 @@ h2 {
 
 .message {
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 25px;
 }
 
@@ -66,7 +64,7 @@ button:hover {
 
 /* Surprise Section */
 .surprise {
-    margin-top: 20px;
+    margin-top: 30px;
     opacity: 0;
     transform: translateY(20px);
     transition: 0.6s ease;
@@ -85,10 +83,11 @@ button:hover {
 
 /* Floating Hearts */
 .heart {
-    position: absolute;
+    position: fixed;
     bottom: -50px;
     font-size: 20px;
     animation: floatUp 6s linear infinite;
+    pointer-events: none;
 }
 
 @keyframes floatUp {
@@ -102,7 +101,7 @@ button:hover {
     }
 }
 
-/* Make text larger on bigger screens */
+/* Larger screens */
 @media (min-width: 768px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 1.8rem; }
